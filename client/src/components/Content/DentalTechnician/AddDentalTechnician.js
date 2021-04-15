@@ -14,7 +14,7 @@ const AddDentalTechnician = () => {
     const dispatch = useDispatch();
 
     const onSubmit = (data) => {
-        const doctor=doctors.find(value=>value._id===data.analyzes);
+        const doctor=doctors.find(value=>value._id===data.doctor);
         dispatch(addDentalTechnicianThunk( {...data,patient:doctor.patient._id}));
     }
     useEffect(() => {
@@ -39,7 +39,7 @@ const AddDentalTechnician = () => {
                 remember: true,
             }}
         >
-            <Form.Item label="Пациент с диагнозом" name="analyzes"
+            <Form.Item label="Пациент с диагнозом" name="doctor"
                        rules={[
                            {
                                required: true,
